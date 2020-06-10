@@ -28,5 +28,29 @@ namespace Snake
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
         }
+
+        public Point(Point p)
+        {
+        x = p.x;
+            y = p.y;
+            sym = p.sym;
+        }
+
+        public void Move( int offset, Direction directon)
+        {
+            if (directon == Direction.RIGHT)
+            { x = x + offset; }
+            else if (directon == Direction.LEFT)
+            { x = x - offset; }
+           else if (directon == Direction.UP)
+            { y = y + offset; }
+          else  if (directon == Direction.DOWN)
+            { y = y - offset; }
+        }
+
+        public override string ToString()
+        {
+            return x + ", " + y + ", " + sym;
+        }
     }
 }
